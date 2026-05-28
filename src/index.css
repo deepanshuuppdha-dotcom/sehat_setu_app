@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #2563EB; /* Modern Medical Blue */
+  --primary-dark: #1E40AF;
+  --primary-light: #EFF6FF;
+  --primary-border: #DBEAFE;
+  
+  --p1: #EF4444; /* Critical stays Red */
+  --p1-bg: #FEF2F2;
+  --p1-border: #FECACA;
+  
+  --p2: #F59E0B; /* Urgent stays Amber/Orange */
+  --p2-bg: #FFF7ED;
+  --p2-border: #FED7AA;
+  
+  --p3: #3B82F6; /* Semi-Urgent Blue */
+  --p3-bg: #EFF6FF;
+  --p3-border: #DBEAFE;
+  
+  --p4: #64748B; /* Routine Slate/Grey */
+  --p4-bg: #F8FAFC;
+  --p4-border: #E2E8F0;
+
+  font-family: 'DM Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #F8FAFC; /* Lighter, cleaner background */
+  color: #0F172A; /* Deeper slate for better readability */
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Modern UI Components ── */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.shadow-pro {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.shadow-pro-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+}
+
+/* ── P1 pulse glow ── */
+@keyframes p1-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+  }
+}
+
+.priority-p1 {
+  animation: p1-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ── New patient card fade-in ── */
+@keyframes patient-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.patient-card-enter {
+  animation: patient-enter 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ── Live status dot pulse ── */
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.9); }
+}
+
+.live-dot {
+  animation: live-pulse 2s ease-in-out infinite;
+}
+
+/* ── Scrollbar styling ── */
+.sidebar-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #CBD5E1 transparent;
+}
+
+.sidebar-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background: #E2E8F0;
+  border-radius: 10px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background: #CBD5E1;
+}
