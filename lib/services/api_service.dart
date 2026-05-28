@@ -4,7 +4,7 @@ import 'package:sehat_setu/models/patient.dart';
 
 class ApiService {
   /// ⚠️  Replace SAKSHAM_IP with your teammate's actual IP before running
-  static const String baseUrl = 'http://192.168.0.102:8000/api';
+  static const String baseUrl = 'https://sehatsetuapp-production.up.railway.app/api';
 
   // ---------- POST /submit-patient ----------
   Future<Patient?> submitPatient(Patient patient) async {
