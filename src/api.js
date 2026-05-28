@@ -5,7 +5,7 @@ const USE_MOCK = false
 export { USE_MOCK }
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://192.168.0.101:8000/api',
+  baseURL: import.meta.env.VITE_API_URL || 'https://sehatsetuapp-production.up.railway.app/api',
   headers: { 'Content-Type': 'application/json' },
 })
 
